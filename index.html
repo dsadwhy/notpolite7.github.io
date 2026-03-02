@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P0litew | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+body{
+font-family:'Inter',sans-serif;
+background:#030308;
+color:white;
+overflow-x:hidden;
+cursor:none;
+}
+
+/* ===== STARFIELD ===== */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* ===== CURSOR ===== */
+.cursor{
+position:fixed;
+width:12px;
+height:12px;
+background:#a78bfa;
+border-radius:50%;
+pointer-events:none;
+z-index:9999;
+}
+
+.trail{
+position:fixed;
+width:35px;
+height:35px;
+border:1px solid rgba(167,139,250,.6);
+border-radius:50%;
+pointer-events:none;
+z-index:9998;
+}
+
+/* ===== GLASS CARDS ===== */
+.glass{
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+transition:.35s;
+}
+
+.glass:hover{
+transform:translateY(-10px);
+box-shadow:0 0 45px rgba(167,139,250,.25);
+}
+
+/* ===== REVEAL ===== */
+.reveal{
+opacity:0;
+transform:translateY(60px) blur(10px);
+transition:1s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0) blur(0);
+}
+
+/* ===== COSMIC TEXT ===== */
+.cosmic{
+background:linear-gradient(90deg,#a78bfa,#34d399);
+-webkit-background-clip:text;
+color:transparent;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<div class="cursor"></div>
+<div class="trail"></div>
+
+<!-- HERO -->
+<section class="px-6 py-28 text-center reveal">
+<h1 class="text-6xl font-extrabold cosmic">P0litew</h1>
+
+<p class="mt-6 text-xl text-slate-300">
+Professional Discord Server Management
+</p>
+
+<p class="mt-4 text-slate-400">
+Staff • Moderation • Bots • Promotions
+</p>
+
+<p class="mt-8 max-w-2xl mx-auto text-slate-400 leading-relaxed">
+Specialized in building structured, scalable Discord communities
+with strong moderation systems, automated bot setups,
+and optimized server architecture.
+</p>
+
+<div class="mt-12 flex justify-center gap-6 flex-wrap">
+
+<a href="https://www.fiverr.com/gamerboiz57" target="_blank"
+class="px-8 py-3 rounded-2xl bg-purple-600 hover:scale-105 transition">
+Hire Me on Fiverr
+</a>
+
+<button onclick="scrollToContact()"
+class="px-8 py-3 rounded-2xl border border-slate-700 hover:border-purple-400 transition">
+Contact Me
+</button>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="px-6 py-24 reveal">
+<h2 class="text-3xl font-bold text-center cosmic mb-4">Services</h2>
+<p class="text-center text-slate-400 mb-20">
+Operational & community management expertise
+</p>
+
+<div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+
+<div class="glass p-8 rounded-3xl text-center">
+<h3 class="text-xl font-semibold text-purple-300">Staff Management</h3>
+<p class="mt-4 text-slate-400">Managing moderators, admins, and internal systems.</p>
+</div>
+
+<div class="glass p-8 rounded-3xl text-center">
+<h3 class="text-xl font-semibold text-purple-300">Moderation</h3>
+<p class="mt-4 text-slate-400">Keeping servers clean and drama-free.</p>
+</div>
+
+<div class="glass p-8 rounded-3xl text-center">
+<h3 class="text-xl font-semibold text-purple-300">Bot Setup</h3>
+<p class="mt-4 text-slate-400">Configuring bots and automation systems.</p>
+</div>
+
+<div class="glass p-8 rounded-3xl text-center">
+<h3 class="text-xl font-semibold text-purple-300">Server Structure</h3>
+<p class="mt-4 text-slate-400">Optimizing roles and channels.</p>
+</div>
+
+</div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="px-6 py-24 reveal">
+<h2 class="text-3xl font-bold text-center cosmic mb-16">
+Leadership & Ownership
+</h2>
+
+<div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
+
+<div class="glass p-8 rounded-3xl text-center">
+<h3 class="text-xl font-semibold text-purple-300">Owner</h3>
+<a href="https://discord.gg/HzwYnRPsBY" target="_blank"
+class="mt-3 block text-slate-300 hover:text-purple-300">
+@RewardsRealm
+</a>
+</div>
+
+<div class="glass p-8 rounded-3xl text-center">
+<h3 class="text-xl font-semibold text-purple-300">Owner</h3>
+<a href="https://discord.gg/PU86ggBj9R" target="_blank"
+class="mt-3 block text-slate-300 hover:text-purple-300">
+@SMPHub
+</a>
+</div>
+
+<div class="glass p-8 rounded-3xl text-center">
+<h3 class="text-xl font-semibold text-purple-300">Executive</h3>
+<a href="https://discord.gg/nuABMAWsG8" target="_blank"
+class="mt-3 block text-slate-300 hover:text-purple-300">
+@MineGift
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="px-6 py-24 text-center reveal">
+<h2 class="text-3xl font-bold cosmic mb-8">Let’s Connect</h2>
+
+<a href="https://discord.com/users/1363059240024932415"
+class="px-10 py-4 rounded-2xl bg-purple-600 hover:scale-105 transition">
+Connect on Discord
+</a>
+</section>
+
+<footer class="py-10 text-center text-slate-500">
+© 2026 P0litew — Community Operations Specialist
+</footer>
+
+<script>
+/* reveal */
+const reveals=document.querySelectorAll(".reveal");
+function reveal(){
+reveals.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100){
+el.classList.add("active");
+}
+});
+}
+window.addEventListener("scroll",reveal);
+window.addEventListener("load",reveal);
+
+/* scroll */
+function scrollToContact(){
+document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+/* cursor */
+const c=document.querySelector(".cursor");
+const t=document.querySelector(".trail");
+
+document.addEventListener("mousemove",e=>{
+c.style.left=e.clientX+"px";
+c.style.top=e.clientY+"px";
+t.animate({left:e.clientX+"px",top:e.clientY+"px"},
+{duration:300,fill:"forwards"});
+});
+
+/* stars */
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+let stars=[];
+for(let i=0;i<140;i++){
+stars.push({x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+z:Math.random()*2});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+stars.forEach(s=>{
+s.y+=0.2*s.z;
+if(s.y>canvas.height)s.y=0;
+ctx.fillStyle="white";
+ctx.fillRect(s.x,s.y,s.z,s.z);
+});
+requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>
