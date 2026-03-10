@@ -1,261 +1,221 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P0litew | Portfolio</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
-
-<style>
-body{
-font-family:'Inter',sans-serif;
-background:#030308;
-color:white;
-overflow-x:hidden;
-cursor:none;
-}
-
-/* ===== STARFIELD ===== */
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
-
-/* ===== CURSOR ===== */
-.cursor{
-position:fixed;
-width:12px;
-height:12px;
-background:#a78bfa;
-border-radius:50%;
-pointer-events:none;
-z-index:9999;
-}
-
-.trail{
-position:fixed;
-width:35px;
-height:35px;
-border:1px solid rgba(167,139,250,.6);
-border-radius:50%;
-pointer-events:none;
-z-index:9998;
-}
-
-/* ===== GLASS CARDS ===== */
-.glass{
-background:rgba(255,255,255,.04);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.08);
-transition:.35s;
-}
-
-.glass:hover{
-transform:translateY(-10px);
-box-shadow:0 0 45px rgba(167,139,250,.25);
-}
-
-/* ===== REVEAL ===== */
-.reveal{
-opacity:0;
-transform:translateY(60px) blur(10px);
-transition:1s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0) blur(0);
-}
-
-/* ===== COSMIC TEXT ===== */
-.cosmic{
-background:linear-gradient(90deg,#a78bfa,#34d399);
--webkit-background-clip:text;
-color:transparent;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Politew ㆍPortfolio</title>
+    <meta name="description" content="Elevating Discord communities through strategic moderation, automation, and structured architecture.">
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body>
 
-<canvas id="stars"></canvas>
+    <!-- Global Spotlight Effect -->
+    <div id="spotlight"></div>
+    <div class="grid-bg"></div>
 
-<div class="cursor"></div>
-<div class="trail"></div>
+    <!-- Minimal Navbar -->
+    <nav id="navbar" class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-dot"></div>
+                P0litew
+            </a>
+            <div class="mobile-menu-trigger" id="mobile-menu-trigger">
+                <i data-lucide="menu"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#collaborators">Collaborators</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<!-- HERO -->
-<section class="px-6 py-28 text-center reveal">
-<h1 class="text-6xl font-extrabold cosmic">P0litew</h1>
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="container">
+            <div class="pfp-wrap reveal">
+                <img src="assets/images/pfp.png" alt="P0litew" class="hero-pfp" onerror="this.src='https://ui-avatars.com/api/?name=P0litew&background=0a0a0b&color=fff&size=256'">
+            </div>
 
-<p class="mt-6 text-xl text-slate-300">
-Professional Discord Server Management
-</p>
+            <div class="hero-badge reveal">
+                <span>Available for Projects</span>
+            </div>
 
-<p class="mt-4 text-slate-400">
-Staff • Moderation • Bots • Promotions
-</p>
+            <h1 class="hero-h1 reveal text-balance">
+                Community <br/> 
+                Operations Architect
+            </h1>
 
-<p class="mt-8 max-w-2xl mx-auto text-slate-400 leading-relaxed">
-Specialized in building structured, scalable Discord communities
-with strong moderation systems, automated bot setups,
-and optimized server architecture.
-</p>
+            <p class="hero-p reveal text-balance">
+                Building scalable Discord ecosystems with a focus on structured moderation, seamless automation, and high-performance server architecture.
+            </p>
 
-<div class="mt-12 flex justify-center gap-6 flex-wrap">
+            <div class="btn-group reveal mobile-stack">
+                <a href="https://www.fiverr.com/gamerboiz57" target="_blank" class="btn-premium btn-solid">Hire on Fiverr</a>
+                <a href="#contact" class="btn-premium btn-ghost">Let's Talk</a>
+            </div>
+        </div>
+    </section>
 
-<a href="https://www.fiverr.com/gamerboiz57" target="_blank"
-class="px-8 py-3 rounded-2xl bg-purple-600 hover:scale-105 transition">
-Hire Me on Fiverr
-</a>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <span class="section-label reveal">Identity</span>
+            <h2 class="section-h2 reveal">About Me</h2>
+            <div class="premium-card reveal about-content">
+                <p class="card-p">
+                    I am a dedicated Discord Community Manager and Server Architect with years of experience in creating and scaling online communities. My approach combines technical precision with a deep understanding of community dynamics.
+                </p>
+                <p class="card-p">
+                    Whether it's managing a 100-member community or a massive server with thousands of active users, I focus on building systems that are both resilient and user-friendly. My passion lies in creating spaces where users feel safe, heard, and engaged.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<button onclick="scrollToContact()"
-class="px-8 py-3 rounded-2xl border border-slate-700 hover:border-purple-400 transition">
-Contact Me
-</button>
+    <!-- Services -->
+    <section id="services" class="section">
+        <div class="container">
+            <span class="section-label reveal">Capabilities</span>
+            <h2 class="section-h2 reveal">Service Spectrum</h2>
 
-</div>
-</section>
+            <div class="grid-cards-single-row reveal">
+                <div class="premium-card service-small-card">
+                    <div class="icon-box"><i data-lucide="users"></i></div>
+                    <h3 class="card-h3-sm">Staff Orchestration</h3>
+                    <p class="card-p-sm">Comprehensive moderator training and admin system management.</p>
+                </div>
 
-<!-- SERVICES -->
-<section class="px-6 py-24 reveal">
-<h2 class="text-3xl font-bold text-center cosmic mb-4">Services</h2>
-<p class="text-center text-slate-400 mb-20">
-Operational & community management expertise
-</p>
+                <div class="premium-card service-small-card">
+                    <div class="icon-box"><i data-lucide="shield"></i></div>
+                    <h3 class="card-h3-sm">Strategic Moderation</h3>
+                    <p class="card-p-sm">Implementation of robust safety protocols and fair governance models.</p>
+                </div>
 
-<div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+                <div class="premium-card service-small-card">
+                    <div class="icon-box"><i data-lucide="bot"></i></div>
+                    <h3 class="card-h3-sm">Automation Flow</h3>
+                    <p class="card-p-sm">Seamless bot configuration and custom workflow automation.</p>
+                </div>
 
-<div class="glass p-8 rounded-3xl text-center">
-<h3 class="text-xl font-semibold text-purple-300">Staff Management</h3>
-<p class="mt-4 text-slate-400">Managing moderators, admins, and internal systems.</p>
-</div>
+                <div class="premium-card service-small-card">
+                    <div class="icon-box"><i data-lucide="layout"></i></div>
+                    <h3 class="card-h3-sm">Systems Architecture</h3>
+                    <p class="card-p-sm">Logical channel hierarchies and role permission mapping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="glass p-8 rounded-3xl text-center">
-<h3 class="text-xl font-semibold text-purple-300">Moderation</h3>
-<p class="mt-4 text-slate-400">Keeping servers clean and drama-free.</p>
-</div>
+    <!-- Leadership -->
+    <section id="leadership" class="section">
+        <div class="container">
+            <span class="section-label reveal">Experience</span>
+            <h2 class="section-h2 reveal">Community Footprint</h2>
 
-<div class="glass p-8 rounded-3xl text-center">
-<h3 class="text-xl font-semibold text-purple-300">Bot Setup</h3>
-<p class="mt-4 text-slate-400">Configuring bots and automation systems.</p>
-</div>
+            <div class="leadership-grid">
+                <div class="premium-card reveal">
+                    <span class="badge-ui badge-cyan">OWNER</span>
+                    <h3 class="card-h3">RewardsRealm</h3>
+                    <p class="card-p">Directing strategic growth and daily server operations for high-engagement community.</p>
+                </div>
 
-<div class="glass p-8 rounded-3xl text-center">
-<h3 class="text-xl font-semibold text-purple-300">Server Structure</h3>
-<p class="mt-4 text-slate-400">Optimizing roles and channels.</p>
-</div>
+                <div class="premium-card reveal">
+                    <span class="badge-ui badge-cyan">OWNER</span>
+                    <h3 class="card-h3">SMPHub</h3>
+                    <p class="card-p">Architecting core infrastructure and managing technical scale for Minecraft communities.</p>
+                </div>
 
-</div>
-</section>
+                <div class="premium-card reveal">
+                    <span class="badge-ui badge-violet">EXECUTIVE</span>
+                    <h3 class="card-h3">MineGift</h3>
+                    <p class="card-p">Overseeing operational directorate and inter-departmental staff coordination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- LEADERSHIP -->
-<section class="px-6 py-24 reveal">
-<h2 class="text-3xl font-bold text-center cosmic mb-16">
-Leadership & Ownership
-</h2>
+    <!-- Collaborators Section -->
+    <section id="collaborators" class="section">
+        <div class="container">
+            <span class="section-label reveal">Partnership</span>
+            <h2 class="section-h2 reveal">Collaborators</h2>
+            <p class="section-subtitle reveal" style="margin-bottom: var(--space-12); color: var(--text-secondary);">
+                Professionals contributing to community growth, management, and innovation.
+            </p>
 
-<div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
+            <div class="collaborators-grid">
+                <!-- Aditya Mishra -->
+                <div class="premium-card collaborator-card reveal">
+                    <div class="collaborator-pfp-wrap">
+                        <img src="assets/collaborators/aditya.png" alt="Aditya Mishra" class="collaborator-pfp" onerror="this.src='https://ui-avatars.com/api/?name=Aditya+Mishra&background=0a0a0b&color=fff&size=256'">
+                    </div>
+                    <div class="collaborator-info">
+                        <h3 class="card-h3">Aditya Mishra</h3>
+                        <span class="badge-ui badge-cyan">Server Strategist & Marketing Specialist</span>
+                        <p class="card-p">Building engaging Discord communities and managing large-scale Minecraft networks with strategic marketing outreach.</p>
+                    </div>
+                </div>
 
-<div class="glass p-8 rounded-3xl text-center">
-<h3 class="text-xl font-semibold text-purple-300">Owner</h3>
-<a href="https://discord.gg/HzwYnRPsBY" target="_blank"
-class="mt-3 block text-slate-300 hover:text-purple-300">
-@RewardsRealm
-</a>
-</div>
+                <!-- Arydesh -->
+                <div class="premium-card collaborator-card reveal" style="transition-delay: 100ms;">
+                    <div class="collaborator-pfp-wrap">
+                        <img src="assets/collaborators/arydesh.png" alt="Arydesh" class="collaborator-pfp" onerror="this.src='https://ui-avatars.com/api/?name=Arydesh&background=0a0a0b&color=fff&size=256'">
+                    </div>
+                    <div class="collaborator-info">
+                        <h3 class="card-h3">Arydesh</h3>
+                        <span class="badge-ui badge-cyan">Community Operations Specialist</span>
+                        <p class="card-p">Professional Discord server management, moderation, and bot setup expertise with specialized knowledge in building structured, scalable communities.</p>
+                    </div>
+                </div>
 
-<div class="glass p-8 rounded-3xl text-center">
-<h3 class="text-xl font-semibold text-purple-300">Owner</h3>
-<a href="https://discord.gg/PU86ggBj9R" target="_blank"
-class="mt-3 block text-slate-300 hover:text-purple-300">
-@SMPHub
-</a>
-</div>
+                <!-- Tanush -->
+                <div class="premium-card collaborator-card reveal" style="transition-delay: 200ms;">
+                    <div class="collaborator-pfp-wrap">
+                        <img src="assets/collaborators/tanush.png" alt="Tanush" class="collaborator-pfp" onerror="this.src='https://ui-avatars.com/api/?name=Tanush&background=0a0a0b&color=fff&size=256'">
+                    </div>
+                    <div class="collaborator-info">
+                        <h3 class="card-h3">Tanush</h3>
+                        <span class="badge-ui badge-violet">Entrepreneur</span>
+                        <p class="card-p">A visionary serial entrepreneur driving innovation across the Minecraft and Discord ecosystems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="glass p-8 rounded-3xl text-center">
-<h3 class="text-xl font-semibold text-purple-300">Executive</h3>
-<a href="https://discord.gg/nuABMAWsG8" target="_blank"
-class="mt-3 block text-slate-300 hover:text-purple-300">
-@MineGift
-</a>
-</div>
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="premium-card reveal contact-cta" style="padding: var(--space-24); align-items: center; text-align: center;">
+                <h2 class="section-h2" style="margin-bottom: var(--space-4);">Start a Project</h2>
+                <p class="hero-p" style="margin-bottom: var(--space-12);">Ready to build the future of your Discord server? I'm available for consultations and full-scale builds.</p>
+                
+                <div class="btn-group mobile-stack">
+                    <a href="https://discord.com/users/1363059240024932415" target="_blank" class="btn-premium btn-solid">Discord DM</a>
+                    <a href="https://www.fiverr.com/gamerboiz57" target="_blank" class="btn-premium btn-ghost">Fiverr Order</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
-</section>
+    <footer class="footer">
+        <div class="container">
+            <p class="card-p" style="text-align: center; color: var(--text-tertiary); font-size: 0.8rem;">&copy; 2026 P0litew. All rights reserved.</p>
+        </div>
+    </footer>
 
-<!-- CONTACT -->
-<section id="contact" class="px-6 py-24 text-center reveal">
-<h2 class="text-3xl font-bold cosmic mb-8">Let’s Connect</h2>
-
-<a href="https://discord.com/users/1363059240024932415"
-class="px-10 py-4 rounded-2xl bg-purple-600 hover:scale-105 transition">
-Connect on Discord
-</a>
-</section>
-
-<footer class="py-10 text-center text-slate-500">
-© 2026 P0litew — Community Operations Specialist
-</footer>
-
-<script>
-/* reveal */
-const reveals=document.querySelectorAll(".reveal");
-function reveal(){
-reveals.forEach(el=>{
-if(el.getBoundingClientRect().top<window.innerHeight-100){
-el.classList.add("active");
-}
-});
-}
-window.addEventListener("scroll",reveal);
-window.addEventListener("load",reveal);
-
-/* scroll */
-function scrollToContact(){
-document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-}
-
-/* cursor */
-const c=document.querySelector(".cursor");
-const t=document.querySelector(".trail");
-
-document.addEventListener("mousemove",e=>{
-c.style.left=e.clientX+"px";
-c.style.top=e.clientY+"px";
-t.animate({left:e.clientX+"px",top:e.clientY+"px"},
-{duration:300,fill:"forwards"});
-});
-
-/* stars */
-const canvas=document.getElementById("stars");
-const ctx=canvas.getContext("2d");
-canvas.width=innerWidth;
-canvas.height=innerHeight;
-
-let stars=[];
-for(let i=0;i<140;i++){
-stars.push({x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-z:Math.random()*2});
-}
-
-function draw(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-stars.forEach(s=>{
-s.y+=0.2*s.z;
-if(s.y>canvas.height)s.y=0;
-ctx.fillStyle="white";
-ctx.fillRect(s.x,s.y,s.z,s.z);
-});
-requestAnimationFrame(draw);
-}
-draw();
-</script>
-
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
